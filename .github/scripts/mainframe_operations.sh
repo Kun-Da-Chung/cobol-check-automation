@@ -9,11 +9,11 @@
  # Set ZOWE_USERNAME
  ZOWE_USERNAME="Z75428" # Replace with the actual username
  # Change to the cobolcheck directory
- cd cobol-check
+ cd cobolcheck
  echo "Changed to $(pwd)"
  ls-al
  # Make cobolcheck executable
- chmod +x cobol-check
+ chmod +x cobolcheck
  echo "Made cobolcheck executable"
  # Make script in scripts directory executable
  cd scripts

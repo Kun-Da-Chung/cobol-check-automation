@@ -9,7 +9,7 @@
  echo "Directory does not exist. Creating it..."
  zowe zos-files create uss-directory "/z/$LOWERCASE_USERNAME/cobolcheck"
  else
- echo "Directory already exists."
+ echo "Directory already exists." 
  fi
  # Upload files
  echo "upload files..."

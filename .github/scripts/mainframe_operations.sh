@@ -7,7 +7,7 @@
  # Check Java availability
  java-version
  # Set ZOWE_USERNAME
- ZOWE_USERNAME="Z99998" # Replace with the actual username
+ ZOWE_USERNAME="Z75428" # Replace with the actual username
  # Change to the cobolcheck directory
  cd cobolcheck
  echo "Changed to $(pwd)"

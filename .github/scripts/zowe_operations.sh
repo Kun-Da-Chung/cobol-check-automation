@@ -1,5 +1,9 @@
  #!/bin/bash
  # zowe_operations.sh
+ # Set up environment
+ export PATH=$PATH:/usr/lpp/java/J8.0_64/bin
+ export JAVA_HOME=/usr/lpp/java/J8.0_64
+ export PATH=$PATH:/usr/lpp/zowe/cli/node/bin
 # Convert username to lowercase
  echo "zowe operation start..."
  LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')

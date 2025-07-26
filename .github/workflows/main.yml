@@ -2,6 +2,8 @@ name: COBOL Check Automation
 on:
   push:
     branches: [main]
+    paths:
+      - 'vs-code-extension/**'
 jobs:
     cobol-check:
       runs-on: ubuntu-latest

@@ -15,4 +15,4 @@ name: COBOL Check Automation
   ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
     run: |
       chmod +x .github/scripts/zowe_operations.sh
-      .github/scripts/zowe_operations.sh
+      .github/scripts/zowe_operations.sh  

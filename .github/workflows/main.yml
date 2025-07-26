@@ -23,15 +23,16 @@ jobs:
         env:
            ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
            ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
-        run:
-           echo "add -x privilige"
+        run: |
+           echo "run zowe operations"
            chmod +x .github/scripts/zowe_operations.sh
-           
+           .github/scripts/zowe_operations.sh           
       - name: mainframe operations
         env:
           ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}
           ZOWE_PASSWORD: ${{ secrets.ZOWE_PASSWORD }}
-        run: 
+        run: |
+          echo "run mainframe operations"
           chmod +x .github/scripts/mainframe_operations.sh
           .github/scripts/mainframe_operations.sh
 

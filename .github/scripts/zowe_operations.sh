@@ -9,7 +9,7 @@
  LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
  # Check if directory exists, create if it doesn't
  echo " uss files zid=" $LOWERCASE_USERNAME
- if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" &>/dev/null; then
+ if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" then
  echo "Directory does not exist. Creating it..."
  zowe zos-files create uss-directory "/z/$LOWERCASE_USERNAME/cobolcheck"
  else

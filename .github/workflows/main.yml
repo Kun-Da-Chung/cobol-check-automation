@@ -13,6 +13,19 @@ jobs:
         with:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '21'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*' # Or a specific Node.js version compatible with Zowe CLI
+
+      - name: Install Zowe CLI
+        run: npm install -g @zowe/cli@zowe-v2-lts
+
+      - name: Run Zowe CLI commands (and potentially Java-dependent tasks)
+        run: |
+          zowe --version          
+          # Add commands that might interact with Java-based Zowe components here
+          
       - name: Running cobol check 
         env:
           ZOWE_USERNAME: ${{ secrets.ZOWE_USERNAME }}

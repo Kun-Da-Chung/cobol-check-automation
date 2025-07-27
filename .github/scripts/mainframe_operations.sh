@@ -16,7 +16,7 @@ ZOWE_USERNAME="Z75428"  # Replace with the actual username or dataset prefix
 echo "1 Changed to $(pwd)"
 ls -al
 cd
-cd cobolcheck
+cd cobol-check
 echo "2 Changed to $(pwd)"
 ls -al
 
@@ -36,7 +36,7 @@ run_cobolcheck() {
   echo "Running cobolcheck for $program"
   
   # Run cobolcheck, but don't exit if it fails
-  ./cobolcheck -p $program
+  ./cobol-check -p $program
   echo "Cobolcheck execution completed for $program (exceptions may have occurred)"
   
   # Check if CC##99.CBL was created, regardless of cobolcheck exit status

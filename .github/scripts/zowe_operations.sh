@@ -4,6 +4,7 @@
  # cd ../IBMZ/github/check-cobol-automation
  echo "change to github dir"
  zowe --version
+ echo zowe --version
 # Convert username to lowercase
  echo "zowe operation start..."
  LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')

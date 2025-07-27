@@ -12,15 +12,15 @@
  echo " uss files zid=" $LOWERCASE_USERNAME
  echo "ssh logon"
  sshpass -p $ZOWE_PASSWORD ssh $ZOWE_USERNAME@204.90.115.200
- #if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" &> /dev/null; then
+ if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" &> /dev/null; then
  echo "Directory does not exist. Creating it..."
  zowe zos-files create uss-directory "/z/$LOWERCASE_USERNAME/cobolcheck"
- #else
+ else
  echo "Directory already exists." 
- #fi
+ fi
  # Upload files
  echo "upload files..."
- zowe zos-files upload dir-to-uss "./cobol-check" "/z/$LOWERCASE_USERNAME/cobolcheck" --recursive--binary-files "cobol-check-0.2.18.zip"
+ zowe zos-files upload dir-to-uss "./cobol-check" "/z/$LOWERCASE_USERNAME/cobolcheck" --recursive --binary-files "cobol-check-0.2.18.zip"
  # Verify upload
  echo "Verifying upload:"
  zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck"

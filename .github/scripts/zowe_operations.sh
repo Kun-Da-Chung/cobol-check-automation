@@ -10,6 +10,8 @@
  LOWERCASE_USERNAME=$(echo "$ZOWE_USERNAME" | tr '[:upper:]' '[:lower:]')
  # Check if directory exists, create if it doesn't
  echo " uss files zid=" $LOWERCASE_USERNAME
+ echo "ssh logon"
+ sshpass -p $ZOWE_PASSWORD ssh $ZOWE_USERNAME@204.90.115.200
  #if ! zowe zos-files list uss-files "/z/$LOWERCASE_USERNAME/cobolcheck" &> /dev/null; then
  echo "Directory does not exist. Creating it..."
  zowe zos-files create uss-directory "/z/$LOWERCASE_USERNAME/cobolcheck"

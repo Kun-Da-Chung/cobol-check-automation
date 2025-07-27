@@ -1,7 +1,7 @@
  #!/bin/bash
  # zowe_operations.sh
  # Set up environment
- cd ../IBMZ/github/check-cobol-automation
+ # cd ../IBMZ/github/check-cobol-automation
  echo "change to github dir"
  zowe --version
 # Convert username to lowercase

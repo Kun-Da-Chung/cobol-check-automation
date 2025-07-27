@@ -15,7 +15,6 @@ ZOWE_USERNAME="Z75428"  # Replace with the actual username or dataset prefix
 # Change to the cobolcheck directory
 echo "1 Changed to $(pwd)"
 ls -al
-cd
 cd cobol-check
 echo "2 Changed to $(pwd)"
 ls -al

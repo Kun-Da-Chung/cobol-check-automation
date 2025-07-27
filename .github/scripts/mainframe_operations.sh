@@ -13,10 +13,11 @@ java -version
 ZOWE_USERNAME="Z75428"  # Replace with the actual username or dataset prefix
 
 # Change to the cobolcheck directory
-ls
+echo "1 Changed to $(pwd)"
+ls -al
 cd
 cd cobolcheck
-echo "Changed to $(pwd)"
+echo "2 Changed to $(pwd)"
 ls -al
 
 # Make cobolcheck executable

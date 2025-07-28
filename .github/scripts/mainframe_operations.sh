@@ -32,6 +32,13 @@ cd ..
 # Function to run cobolcheck and copy files
 run_cobolcheck() {
 
+  # Set ZOWE_USERNAME
+  #ZOWE_USERNAME="Z75428"  # Replace with the actual username or dataset prefix
+  echo "Running USER cobolcheck for ${ZOWE_USERNAME}"
+  echo "Running USER cobolcheck for $ZOWE_USERNAME"
+  echo "Running USER cobolcheck for $(ZOWE_USERNAME)"
+  echo ZOWE_USERNAME
+
   program=$1
   echo "Running cobolcheck for $program"
   
@@ -39,10 +46,7 @@ run_cobolcheck() {
   ./cobolcheck -p $program
   echo "Cobolcheck execution completed for $program (exceptions may have occurred)"
   
-  # Check if CC##99.CBL was created, regardless of cobolcheck exit status
-  # Set ZOWE_USERNAME
-  ZOWE_USERNAME="Z75428"  # Replace with the actual username or dataset prefix
-  echo "Running USER cobolcheck for ${ZOWE_USERNAME}"
+  # Check if CC##99.CBL was created, regardless of cobolcheck exit status 
   
   if [ -f "CC##99.CBL" ]; then
     # Copy to the MVS dataset

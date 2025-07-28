@@ -13,8 +13,8 @@ java -version
 ZOWE_USERNAME="Z75428"  # Replace with the actual username or dataset prefix
 
 # Change to the cobolcheck directory
-#echo "1 Changed to $(pwd)"
-#ls -al
+echo "1 Changed to $(pwd)"
+ls -al
 cd cobol-check
 echo "2 Changed to $(pwd)"
 ls -al
@@ -27,7 +27,10 @@ echo "Made cobolcheck executable"
 cd scripts
 chmod +x linux_gnucobol_run_tests
 echo "Made linux_gnucobol_run_tests executable"
-cd ..
+cd
+
+echo "3 Changed to $(pwd)"
+ls -al
 
 # Function to run cobolcheck and copy files
 run_cobolcheck() {
@@ -38,7 +41,7 @@ run_cobolcheck() {
   #echo "Running USER cobolcheck for $ZOWE_USERNAME"
   #echo "Running USER cobolcheck for $(ZOWE_USERNAME)"
   #echo ZOWE_USERNAME
-
+  
   program=$1
   echo "Running cobolcheck for $program"
   

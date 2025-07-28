@@ -13,8 +13,8 @@ java -version
 ZOWE_USERNAME="Z75428"  # Replace with the actual username or dataset prefix
 
 # Change to the cobolcheck directory
-echo "1 Changed to $(pwd)"
-ls -al
+#echo "1 Changed to $(pwd)"
+#ls -al
 cd cobol-check
 echo "2 Changed to $(pwd)"
 ls -al
@@ -31,6 +31,7 @@ cd ..
 
 # Function to run cobolcheck and copy files
 run_cobolcheck() {
+
   program=$1
   echo "Running cobolcheck for $program"
   
@@ -39,7 +40,9 @@ run_cobolcheck() {
   echo "Cobolcheck execution completed for $program (exceptions may have occurred)"
   
   # Check if CC##99.CBL was created, regardless of cobolcheck exit status
-  echo "Running USER cobolcheck for $ZOWE_USERNAME"
+  # Set ZOWE_USERNAME
+  ZOWE_USERNAME="Z75428"  # Replace with the actual username or dataset prefix
+  echo "Running USER cobolcheck for ${ZOWE_USERNAME}"
   
   if [ -f "CC##99.CBL" ]; then
     # Copy to the MVS dataset
@@ -65,8 +68,8 @@ run_cobolcheck() {
 }
 
 # Run for each program
-for program in NUMBERS EMPPAY DEPTPAY; do
-  run_cobolcheck $program
-done
+#for program in NUMBERS EMPPAY DEPTPAY; do
+#  run_cobolcheck $program
+#done
 
 echo "Mainframe operations completed"

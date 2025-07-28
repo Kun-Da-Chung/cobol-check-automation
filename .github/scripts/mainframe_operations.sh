@@ -72,7 +72,7 @@ run_cobolcheck() {
     echo "${program}.JCL not found"
   fi
   
-#}
+}
 
 # Run for each program
 #for program in NUMBERS EMPPAY DEPTPAY; do

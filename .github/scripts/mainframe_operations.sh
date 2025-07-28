@@ -34,37 +34,37 @@ run_cobolcheck() {
 
   # Set ZOWE_USERNAME
   #ZOWE_USERNAME="Z75428"  # Replace with the actual username or dataset prefix
-  echo "Running USER cobolcheck for ${ZOWE_USERNAME}"
-  echo "Running USER cobolcheck for $ZOWE_USERNAME"
-  echo "Running USER cobolcheck for $(ZOWE_USERNAME)"
-  echo ZOWE_USERNAME
+  #echo "Running USER cobolcheck for ${ZOWE_USERNAME}"
+  #echo "Running USER cobolcheck for $ZOWE_USERNAME"
+  #echo "Running USER cobolcheck for $(ZOWE_USERNAME)"
+  #echo ZOWE_USERNAME
 
   program=$1
-  echo "Running cobolcheck for $program"
+  echo "Running cobolcheck for ${program}"
   
   # Run cobolcheck, but don't exit if it fails
-  ./cobolcheck -p $program
-  echo "Cobolcheck execution completed for $program (exceptions may have occurred)"
+  ./cobolcheck -p ${program}
+  echo "Cobolcheck execution completed for ${program} (exceptions may have occurred)"
   
   # Check if CC##99.CBL was created, regardless of cobolcheck exit status 
   
   if [ -f "CC##99.CBL" ]; then
     # Copy to the MVS dataset
     if cp CC##99.CBL "//'${ZOWE_USERNAME}.CBL($program)'"; then
-      echo "Copied CC##99.CBL to ${ZOWE_USERNAME}.CBL($program)"
+      echo "Copied CC##99.CBL to ${ZOWE_USERNAME}.CBL(${program})"
     else
-      echo "Failed to copy CC##99.CBL to ${ZOWE_USERNAME}.CBL($program)"
+      echo "Failed to copy CC##99.CBL to ${ZOWE_USERNAME}.CBL(${program})"
     fi
   else
-    echo "CC##99.CBL not found for $program"
+    echo "CC##99.CBL not found for ${program}"
   fi
   
   # Copy the JCL file if it exists
   if [ -f "${program}.JCL" ]; then
-    if cp ${program}.JCL "//'${ZOWE_USERNAME}.JCL($program)'"; then
-      echo "Copied ${program}.JCL to ${ZOWE_USERNAME}.JCL($program)"
+    if cp ${program}.JCL "//'${ZOWE_USERNAME}.JCL(${program})'"; then
+      echo "Copied ${program}.JCL to ${ZOWE_USERNAME}.JCL(${program})"
     else
-      echo "Failed to copy ${program}.JCL to ${ZOWE_USERNAME}.JCL($program)"
+      echo "Failed to copy ${program}.JCL to ${ZOWE_USERNAME}.JCL(${program})"
     fi
   else
     echo "${program}.JCL not found"

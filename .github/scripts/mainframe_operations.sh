@@ -37,7 +37,7 @@ run_cobolcheck() {
 
   # Set ZOWE_USERNAME
   ZOWE_USERNAME="Z75428"  # Replace with the actual username or dataset prefix
-  echo "Running USER cobolcheck for ${ZOWE_USERNAME}"
+  #echo "Running USER cobolcheck for ${ZOWE_USERNAME}"
   #echo "Running USER cobolcheck for ${ZOWE_USERNAME}"
   #echo "Running USER cobolcheck for $(ZOWE_USERNAME)"
   #cho ZOWE_USERNAME  

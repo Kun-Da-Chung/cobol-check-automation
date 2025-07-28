@@ -33,12 +33,12 @@ echo "3 Changed to $(pwd)"
 ls -al
 
 # Function to run cobolcheck and copy files
-run_cobolcheck() {
+#run_cobolcheck() {
 
   # Set ZOWE_USERNAME
   #ZOWE_USERNAME="Z75428"  # Replace with the actual username or dataset prefix
   #echo "Running USER cobolcheck for ${ZOWE_USERNAME}"
-  #echo "Running USER cobolcheck for $ZOWE_USERNAME"
+  echo "Running USER cobolcheck for $ZOWE_USERNAME"
   #echo "Running USER cobolcheck for $(ZOWE_USERNAME)"
   #echo ZOWE_USERNAME
   
@@ -72,7 +72,8 @@ run_cobolcheck() {
   else
     echo "${program}.JCL not found"
   fi
-}
+  
+#}
 
 # Run for each program
 #for program in NUMBERS EMPPAY DEPTPAY; do
